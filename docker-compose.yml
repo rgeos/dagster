@@ -26,7 +26,6 @@ services:
     image: docker_example_user_code_image
     restart: unless-stopped
     volumes:
-      # - .:/opt/dagster/app
       - ./repo.py:/opt/dagster/app/repo.py
     command: "/usr/local/bin/python /usr/local/bin/dagster api grpc -h 0.0.0.0 -p 4000 -f /opt/dagster/app/repo.py"
     environment:

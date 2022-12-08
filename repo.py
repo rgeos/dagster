@@ -4,12 +4,12 @@ from dagster import fs_io_manager, graph, op, repository, schedule, get_dagster_
 
 
 def func_name(): 
-    return f"<> I am in {sys._getframe(1).f_code.co_name} <>"
+    return f"### I am in {sys._getframe(1).f_code.co_name}"
 
 @op
 def hello():
     get_dagster_logger().info(func_name())
-    return 2
+    return 1
 
 @op
 def goodbye(foo):
